@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-
+    Rigidbody _rb;
+    
     public float movementSpeed;
+    //public float rotationSpeed;
     void Start()
     {
-        
+        //_rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,11 @@ public class playerController : MonoBehaviour
         if(Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.position += new Vector3(0, 2 * movementSpeed * Time.deltaTime, 0);
         }
     }
 }
