@@ -37,5 +37,11 @@ public class playerController : MonoBehaviour
         {
             transform.position += new Vector3(0, 2 * movementSpeed * Time.deltaTime, 0);
         }
+
+        if(Input.GetKey(KeyCode.LeftControl))
+        {
+            transform.position += new Vector3(0, -2 * movementSpeed * Time.deltaTime, 0);
+        }
+
     }
 }
