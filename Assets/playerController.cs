@@ -5,6 +5,8 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public float movementSpeed;
     void Start()
     {
         
@@ -15,19 +17,19 @@ public class playerController : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += new Vector3(0, 0, -.2f);
+            transform.position += new Vector3(0, 0, -movementSpeed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += new Vector3(0, 0, .2f);
+            transform.position += new Vector3(0, 0, movementSpeed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3(-.2f, 0, 0);
+            transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += new Vector3(.2f, 0, 0);
+            transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
         }
     }
 }
