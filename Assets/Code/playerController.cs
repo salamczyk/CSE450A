@@ -35,12 +35,14 @@ public class playerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && transform.position.y == 0)
         {
-            transform.position += new Vector3(0, 5 * movementSpeed * Time.deltaTime, 0);
+            transform.position += new Vector3(0, 50 * movementSpeed * Time.deltaTime, 0);
         }
+        
         else if(Input.GetKey(KeyCode.Space) == false)
         {
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         }
+        
 
         
 
