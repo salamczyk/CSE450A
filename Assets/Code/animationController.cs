@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class animationController : MonoBehaviour
 {
     Animator animator;
@@ -14,15 +15,63 @@ public class animationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             animator.SetBool("IsRunning", true);
-            // Other movement logic...
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                animator.SetBool("IsJumping", true);
+            }
+            else
+            {
+                animator.SetBool("IsJumping", false);
+            }
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            animator.SetBool("IsRunning", true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                animator.SetBool("IsJumping", true);
+            }
+            else
+            {
+                animator.SetBool("IsJumping", false);
+            }
+        }
+        else if (Input.GetKey(KeyCode.UpArrow))
+        {
+            animator.SetBool("IsRunning", true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                animator.SetBool("IsJumping", true);
+            }
+            else
+            {
+                animator.SetBool("IsJumping", false);
+            }
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            animator.SetBool("IsRunning", true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                animator.SetBool("IsJumping", true);
+            }
+            else
+            {
+                animator.SetBool("IsJumping", false);
+            }
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("IsJumping", true);
         }
         else
         {
             animator.SetBool("IsRunning", false);
-            // Other movement logic...
+            animator.SetBool("IsJumping", false);
         } 
     }
 }
