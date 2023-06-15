@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.Windows.Speech;
 
 public class playerController : MonoBehaviour
 {
     Rigidbody _rb;
-    
+
     public float movementSpeed;
+
+    public int jumpsLeft;
+
     //public float rotationSpeed;
     void Start()
     {
-        //_rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
+        _rb.useGravity = true;    
     }
 
     // Update is called once per frame
@@ -33,18 +40,28 @@ public class playerController : MonoBehaviour
             transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey(KeyCode.Space) && transform.position.y == 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.position += new Vector3(0, 50 * movementSpeed * Time.deltaTime, 0);
+            if (jumpsLeft > 0)
+            {
+                jumpsLeft--;
+                
+                _rb.AddForce(Vector3.up*7f, ForceMode.Impulse);
+                
+            }
+            
         }
-        
-        else if(Input.GetKey(KeyCode.Space) == false)
-        {
-            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        }
-        
-
-        
 
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            jumpsLeft = 2;
+        }
+    }
+
+
 }
