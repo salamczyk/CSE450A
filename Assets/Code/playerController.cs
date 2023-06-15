@@ -26,18 +26,22 @@ public class playerController : MonoBehaviour
         if(Input.GetKey(KeyCode.DownArrow))
         {
             transform.position += new Vector3(0, 0, -movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, -1));
         }
         if(Input.GetKey(KeyCode.UpArrow))
         {
             transform.position += new Vector3(0, 0, movementSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, 1));
         }
         if(Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
+            transform.rotation = Quaternion.LookRotation(new Vector3(-1, 0, 0));
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
+            transform.rotation = Quaternion.LookRotation(new Vector3(1, 0, 0));
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -46,7 +50,7 @@ public class playerController : MonoBehaviour
             {
                 jumpsLeft--;
                 
-                _rb.AddForce(Vector3.up*7f, ForceMode.Impulse);
+                _rb.AddForce(Vector3.up*25f, ForceMode.Impulse);
                 
             }
             
