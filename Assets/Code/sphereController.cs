@@ -8,6 +8,8 @@ public class sphereController : MonoBehaviour
 {
     Rigidbody rb;
     public Vector3 initForce;
+
+    public gameOver gameOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,9 @@ public class sphereController : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<playerController>() != null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            gameOver.Setup();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
         }
     }
 }
