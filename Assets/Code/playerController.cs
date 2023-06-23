@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.Windows.Speech;
+//using UnityEngine.Windows.Speech;
 
 public class playerController : MonoBehaviour
 {
