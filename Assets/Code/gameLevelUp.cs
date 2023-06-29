@@ -4,17 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class gameOver : MonoBehaviour
+public class gameLevelUp : MonoBehaviour
 {
-    public winTimer WinTimer;
     // public Text levelText;
     public void Setup(/*int level*/)
     {
         gameObject.SetActive(true);
-        WinTimer.timeToWin = 1000f;
         //levelText.text = 
     }
-    public void RestartButton()
+    public void LevelUpButton()
     {
         //SceneManager.LoadScene("MainScene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
