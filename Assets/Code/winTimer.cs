@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
@@ -16,13 +17,13 @@ public class winTimer : MonoBehaviour
     // State Tracking
     private bool playerWon = false;
     private bool playerLose = false;
-
+    
     // Update is called once per frame
     void Update()
     {
         if (timeToWin == 1000f)
         {
-            currentTimeText.text = "END";
+            currentTimeText.text = "";
             playerLose = true;
         }
         if (timeToWin <= 0)
@@ -36,7 +37,6 @@ public class winTimer : MonoBehaviour
             currentTimeText.text = timeToWin.ToString();
             timeToWin -= Time.deltaTime;
         }
-        
-        
+
     }
 }
