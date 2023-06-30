@@ -54,7 +54,7 @@ public class playerController : MonoBehaviour
             {
                 jumpsLeft--;
                 
-                _rb.AddForce(Vector3.up*25f, ForceMode.Impulse);
+                _rb.AddForce(Vector3.up*700f, ForceMode.Impulse);
                 
             }
             
