@@ -25,22 +25,26 @@ public class playerController : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += new Vector3(0, 0, -movementSpeed * Time.deltaTime);
+            //transform.position += new Vector3(0, 0, -movementSpeed * Time.deltaTime);
+            _rb.AddForce(Vector3.back * movementSpeed * Time.deltaTime, ForceMode.Impulse);
             transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, -1));
         }
         if(Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += new Vector3(0, 0, movementSpeed * Time.deltaTime);
+            //transform.position += new Vector3(0, 0, movementSpeed * Time.deltaTime);
+            _rb.AddForce(Vector3.forward * movementSpeed * Time.deltaTime, ForceMode.Impulse);
             transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, 1));
         }
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
+            //transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
+            _rb.AddForce(Vector3.left * movementSpeed * Time.deltaTime, ForceMode.Impulse);
             transform.rotation = Quaternion.LookRotation(new Vector3(-1, 0, 0));
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
+            // transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
+            _rb.AddForce(Vector3.right * movementSpeed * Time.deltaTime, ForceMode.Impulse);
             transform.rotation = Quaternion.LookRotation(new Vector3(1, 0, 0));
         }
 

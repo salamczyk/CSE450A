@@ -29,5 +29,9 @@ public class sphereController : MonoBehaviour
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
         }
+        if(collision.gameObject.layer == 9)
+        {
+            Destroy(gameObject);
+        }
     }
 }
