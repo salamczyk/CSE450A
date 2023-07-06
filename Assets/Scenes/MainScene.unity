@@ -2905,6 +2905,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere
       objectReference: {fileID: 0}
+    - target: {fileID: 7058198567613775911, guid: cbe6e9b881c8bc94b9908da22664ea93, type: 3}
+      propertyPath: m_Drag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058198567613775911, guid: cbe6e9b881c8bc94b9908da22664ea93, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9185755585499195452, guid: cbe6e9b881c8bc94b9908da22664ea93, type: 3}
       propertyPath: gameOver
       value: 
