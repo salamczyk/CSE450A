@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 public class playerController : MonoBehaviour
 {
     Rigidbody _rb;
+    
+    public gameOver gameOver;
 
     public float movementSpeed;
 
@@ -56,12 +58,16 @@ public class playerController : MonoBehaviour
             {
                 jumpsLeft--;
                 
-                _rb.AddForce(Vector3.up*700f, ForceMode.Impulse);
+                _rb.AddForce(Vector3.up*800f, ForceMode.Impulse);
                 
             }
             
         }
         transform.Rotate(0, mouseSensitivity * Input.GetAxis("Mouse X"), 0);
+        if (_rb.position.y <= -5f)
+        {
+            gameOver.Setup();
+        }
 
     }
 
