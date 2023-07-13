@@ -27,25 +27,25 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.DownArrow))
+        if(Input.GetKey(KeyCode.S))
         {
             //transform.position += new Vector3(0, 0, -movementSpeed * Time.deltaTime);
             _rb.AddRelativeForce(Vector3.back * movementSpeed * Time.deltaTime, ForceMode.Impulse);
             //transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, -1));
         }
-        if(Input.GetKey(KeyCode.UpArrow))
+        if(Input.GetKey(KeyCode.W))
         {
             //transform.position += new Vector3(0, 0, movementSpeed * Time.deltaTime);
             _rb.AddRelativeForce(Vector3.forward * movementSpeed * Time.deltaTime, ForceMode.Impulse);
             //transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, 1));
         }
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if(Input.GetKey(KeyCode.A))
         {
             //transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
             _rb.AddRelativeForce(Vector3.left * movementSpeed * Time.deltaTime, ForceMode.Impulse);
             //transform.rotation = Quaternion.LookRotation(new Vector3(-1, 0, 0));
         }
-        if(Input.GetKey(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.D))
         {
             // transform.position += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
             _rb.AddRelativeForce(Vector3.right * movementSpeed * Time.deltaTime, ForceMode.Impulse);

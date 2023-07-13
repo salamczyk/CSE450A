@@ -15,6 +15,6 @@ public class gameLevelUp : MonoBehaviour
     public void LevelUpButton()
     {
         //SceneManager.LoadScene("MainScene");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Scene_2");
     }
 }

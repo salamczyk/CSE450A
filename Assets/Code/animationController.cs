@@ -15,7 +15,7 @@ public class animationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
             animator.SetBool("IsRunning", true);
             if (Input.GetKeyDown(KeyCode.Space))
@@ -27,7 +27,7 @@ public class animationController : MonoBehaviour
                 animator.SetBool("IsJumping", false);
             }
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.A))
         {
             animator.SetBool("IsRunning", true);
             if (Input.GetKeyDown(KeyCode.Space))
@@ -39,7 +39,7 @@ public class animationController : MonoBehaviour
                 animator.SetBool("IsJumping", false);
             }
         }
-        else if (Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.W))
         {
             animator.SetBool("IsRunning", true);
             if (Input.GetKeyDown(KeyCode.Space))
@@ -51,7 +51,7 @@ public class animationController : MonoBehaviour
                 animator.SetBool("IsJumping", false);
             }
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.S))
         {
             animator.SetBool("IsRunning", true);
             if (Input.GetKeyDown(KeyCode.Space))
