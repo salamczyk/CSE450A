@@ -34,7 +34,8 @@ public class winTimer : MonoBehaviour
         }
         if (playerWon == false && playerLose == false)
         {
-            currentTimeText.text = timeToWin.ToString();
+            string timeString = timeToWin.ToString("F2");
+            currentTimeText.text = timeString.Replace(".", ":");
             timeToWin -= Time.deltaTime;
         }
 
