@@ -17,26 +17,34 @@ public class winTimer : MonoBehaviour
     // State Tracking
     private bool playerWon = false;
     private bool playerLose = false;
-    
+
+    private bool passOnce = false;
     // Update is called once per frame
     void Update()
     {
-        if (timeToWin == 1000f)
+        if (passOnce)
         {
-            currentTimeText.text = "";
-            playerLose = true;
+            if (timeToWin == 1000f)
+            {
+                currentTimeText.text = "";
+                playerLose = true;
+            }
+            if (timeToWin <= 0)
+            {
+                timeToWin = 0;
+                playerWon = true;
+                gameLevelUp.Setup();
+            }
+            if (playerWon == false && playerLose == false)
+            {
+                string timeString = timeToWin.ToString("F2");
+                currentTimeText.text = timeString.Replace(".", ":");
+                timeToWin -= Time.deltaTime;
+            }
         }
-        if (timeToWin <= 0)
+        else
         {
-            timeToWin = 0;
-            playerWon = true;
-            gameLevelUp.Setup();
-        }
-        if (playerWon == false && playerLose == false)
-        {
-            string timeString = timeToWin.ToString("F2");
-            currentTimeText.text = timeString.Replace(".", ":");
-            timeToWin -= Time.deltaTime;
+            passOnce = true;
         }
 
     }
