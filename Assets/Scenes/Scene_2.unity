@@ -4632,6 +4632,7 @@ MonoBehaviour:
   timeToWin: 20
   currentTimeText: {fileID: 378163807}
   gameLevelUp: {fileID: 1582627811}
+  gameOver: {fileID: 30515807}
 --- !u!1 &1705322782136635570 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5823736158326674344, guid: cbe6e9b881c8bc94b9908da22664ea93, type: 3}
