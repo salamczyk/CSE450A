@@ -9,7 +9,10 @@ public class gameLevelUp : MonoBehaviour
     // public Text levelText;
     public void Setup(/*int level*/)
     {
-        gameObject.SetActive(true);
+        if (!gameOver.gameOverSetup)
+        {
+            gameObject.SetActive(true);
+        }
         //levelText.text = 
     }
     public void LevelUpButton()
