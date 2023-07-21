@@ -3396,11 +3396,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 976846275}
   cameraDistance: 10
-  initCameraDistance: 0
-  initCameraHeight: 0
-  initCameraOrbitTime: 0
-  initCameraOrbitAngle: 0
-  xCenter: 0
+  initCameraDistance: 20
+  initCameraHeight: 20
+  initCameraOrbitTime: 10
+  initCameraOrbitAngle: 40
+  xCenter: 10
   zCenter: 0
 --- !u!1 &1582627809
 GameObject:
