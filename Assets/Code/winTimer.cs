@@ -12,7 +12,7 @@ public class winTimer : MonoBehaviour
     public float timeToWin;
     public TextMeshProUGUI currentTimeText;
     public gameLevelUp gameLevelUp;
-    
+    public gameOver gameOver;
     
     // State Tracking
     private bool playerWon = false;
@@ -32,8 +32,8 @@ public class winTimer : MonoBehaviour
             if (timeToWin <= 0)
             {
                 timeToWin = 0;
-                playerWon = true;
-                gameLevelUp.Setup();
+                playerLose = true;
+                gameOver.Setup();
             }
             if (playerWon == false && playerLose == false)
             {
