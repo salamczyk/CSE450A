@@ -67,6 +67,7 @@ public class playerController : MonoBehaviour
         if (_rb.position.y <= -5f)
         {
             gameOver.Setup();
+            gameOver.gameOverSetup = false;
         }
 
     }
