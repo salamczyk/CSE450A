@@ -18,6 +18,7 @@ public class gameOver : MonoBehaviour
     }
     public void RestartButton()
     {
+        gameOverSetup = false;
         //SceneManager.LoadScene("MainScene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

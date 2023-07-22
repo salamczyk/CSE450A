@@ -17,6 +17,7 @@ public class gameLevelUp : MonoBehaviour
     }
     public void LevelUpButton()
     {
+        gameOver.gameOverSetup = false;
         //SceneManager.LoadScene("MainScene");
         SceneManager.LoadScene("Scene_2");
     }
