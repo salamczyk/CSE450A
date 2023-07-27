@@ -5,6 +5,9 @@ using UnityEngine;
 public class cameraController : MonoBehaviour
 {
     public GameObject character;
+    public GameObject skipButton;
+
+
     public float cameraDistance;
     
     public float initCameraDistance;
@@ -47,9 +50,15 @@ public class cameraController : MonoBehaviour
         }
         else
         {
+            skipButton.SetActive(false);
             Time.timeScale = 1;
             transform.position = new Vector3(character.transform.position.x + -1 * cameraDistance * Mathf.Sin(Mathf.Deg2Rad * character.transform.rotation.eulerAngles.y), initialHeight, character.transform.position.z + -1 * cameraDistance * Mathf.Cos(Mathf.Deg2Rad * character.transform.rotation.eulerAngles.y));
             transform.rotation = Quaternion.Euler(initialRotation, 1 * character.transform.rotation.eulerAngles.y, 0);
         }
+    }
+
+    public void skipOrbit()
+    {
+        timer = initCameraOrbitTime;
     }
 }
