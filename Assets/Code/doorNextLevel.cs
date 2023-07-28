@@ -6,7 +6,7 @@ public class doorNextLevel : MonoBehaviour
 {
     public gameLevelUp gameLevelUp;
     public gameOver gameOver;
-    public float winTimer = 0f;
+    public float winTimer/* = 0f*/;
     private float onethird;
     private float twothird;
 
@@ -17,7 +17,7 @@ public class doorNextLevel : MonoBehaviour
     private void Start()
     {
         onethird = winTimer / 3;
-        twothird = 2 * winTimer / 3;
+        twothird = winTimer / 2 - 0.5f; //2 * winTimer / 3;
     }
     private void Update()
     {
