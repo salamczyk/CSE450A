@@ -13,6 +13,16 @@ public class gameLevelUp : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 1;
+        }
+        if (nextSceneIndex > PlayerPrefs.GetInt("levelAt"))
+        {
+            PlayerPrefs.SetInt("levelAt", nextSceneIndex);
+        }
         //levelText.text = 
     }
     public void LevelUpButton()
@@ -22,7 +32,7 @@ public class gameLevelUp : MonoBehaviour
         int nextSceneIndex = currentSceneIndex + 1;
         if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
         {
-            nextSceneIndex = 0;
+            nextSceneIndex = 1;
         }
         //SceneManager.LoadScene("MainScene");
         SceneManager.LoadScene(nextSceneIndex);
@@ -33,5 +43,11 @@ public class gameLevelUp : MonoBehaviour
         gameOver.gameOverSetup = false;
         //SceneManager.LoadScene("MainScene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LevelSelection()
+    {
+        gameOver.gameOverSetup = false;
+        SceneManager.LoadScene("ChapterPage");
     }
 }

@@ -22,4 +22,10 @@ public class gameOver : MonoBehaviour
         //SceneManager.LoadScene("MainScene");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    
+    public void LevelSelection()
+    {
+        gameOverSetup = false;
+        SceneManager.LoadScene("ChapterPage");
+    }
 }
