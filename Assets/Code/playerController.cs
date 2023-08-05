@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 //using UnityEngine.Windows.Speech;
 
 public class playerController : MonoBehaviour
@@ -68,6 +69,11 @@ public class playerController : MonoBehaviour
         {
             gameOver.Setup();
             gameOver.gameOverSetup = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("ChapterPage");
         }
 
     }
