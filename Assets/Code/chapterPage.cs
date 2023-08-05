@@ -9,7 +9,15 @@ public class chapterPage : MonoBehaviour
     
     public void OpenScene()
     {
-        SceneManager.LoadScene("Scene_" + level.ToString());
+        if (level == 0)
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        else
+        {
+            SceneManager.LoadScene("Scene_" + level.ToString());
+        }
+        
     }
-    
+
 }

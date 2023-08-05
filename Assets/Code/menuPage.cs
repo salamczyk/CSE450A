@@ -11,4 +11,5 @@ public class menuPage : MonoBehaviour
         PlayerPrefs.DeleteAll();
         //SceneManager.LoadScene("Scene_2");
     }
+
 }
