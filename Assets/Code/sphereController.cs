@@ -21,7 +21,7 @@ public class sphereController : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.GetComponent<playerController>() != null)
         {
@@ -30,6 +30,19 @@ public class sphereController : MonoBehaviour
             
         }
         if(collision.gameObject.layer == 9)
+        {
+            Destroy(gameObject);
+        }
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<playerController>() != null)
+        {
+            gameOver.Setup();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        }
+        if (collision.gameObject.layer == 9)
         {
             Destroy(gameObject);
         }

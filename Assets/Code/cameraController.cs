@@ -52,7 +52,7 @@ public class cameraController : MonoBehaviour
         {
             skipButton.SetActive(false);
             Time.timeScale = 1;
-            transform.position = new Vector3(character.transform.position.x + -1 * cameraDistance * Mathf.Sin(Mathf.Deg2Rad * character.transform.rotation.eulerAngles.y), initialHeight, character.transform.position.z + -1 * cameraDistance * Mathf.Cos(Mathf.Deg2Rad * character.transform.rotation.eulerAngles.y));
+            transform.position = new Vector3(character.transform.position.x + -1 * cameraDistance * Mathf.Sin(Mathf.Deg2Rad * character.transform.rotation.eulerAngles.y), character.transform.position.y + initialHeight, character.transform.position.z + -1 * cameraDistance * Mathf.Cos(Mathf.Deg2Rad * character.transform.rotation.eulerAngles.y));
             transform.rotation = Quaternion.Euler(initialRotation, 1 * character.transform.rotation.eulerAngles.y, 0);
         }
     }
