@@ -42,7 +42,7 @@ public class doorNextLevel : MonoBehaviour
             {
                 star_1.SetActive(true);
             }
-            gameLevelUp.Setup();
+            //gameLevelUp.Setup();
         }
     }
 }

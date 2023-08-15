@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class doorControl : MonoBehaviour
+public class doorInner : MonoBehaviour
 {
-    public SKFDoor door;
-    public GameObject key;
-    public doorInner doorInner;
+    public gameLevelUp gameLevelUp;
+    public void Setup()
+    {
+        gameObject.SetActive(true);
+    }
+    
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<playerController>() != null)
         {
-            door.OpenDoor();
-            key.SetActive(false);
-            doorInner.Setup();
+            gameLevelUp.Setup();
         }
     }
 }
